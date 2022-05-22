@@ -12,8 +12,8 @@
         "_id": "2",
         "name": "Hardware",
         "price": 420,
-        "img": "https://cdn.ready-market.com/106/96d402a7//Templates/pic/m/Category-bn-01-Hardware-for-Woodworking.jpg?v=205e16c9",
-        "description" : "Fortune offers a wide range of different cabinet & furniture hardware and accessories to suit the needs...",
+        "img": "https://dimar.com.au/wp-content/uploads/2014/10/adv.jpg",
+        "description" : "We manufacture and provide drilling solutions for the woodworking industry....",
         "minOrder" : 10,
         "availableProduct" : 100 
       },
@@ -21,8 +21,8 @@
         "_id": "3",
         "name": "Hardware",
         "price": 420,
-        "img": "https://cdn.ready-market.com/106/96d402a7//Templates/pic/m/Category-bn-01-Hardware-for-Woodworking.jpg?v=205e16c9",
-        "description" : "Fortune offers a wide range of different cabinet & furniture hardware and accessories to suit the needs...",
+        "img": "https://cdn.ready-market.com/106/96d402a7//Templates/pic/m/Category-bn-02-woodworking-hardware-kits.jpg?v=ad554d00",
+        "description" : "Fortune offers a quality hardware kit collection for woodworking jigs,...",
         "minOrder" : 10,
         "availableProduct" : 100 
       }
