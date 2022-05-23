@@ -43,7 +43,7 @@ const Login = () => {
     };
     return (
         <div className='flex justify-center items-center h-screen'>
-            <div class="card w-96 bg-primary text-primary-content">
+            <div class="card w-96 bg-base-300 shadow-xl">
                 <div class="card-body">
                 <h2 className="text-xl font bold text-center">Login</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -53,7 +53,7 @@ const Login = () => {
                     </label> */}
                     <input type="email" 
                         placeholder="Your Email" 
-                        className="input input-bordered w-full max-w-xs" 
+                        className="input input-primary input-bordered w-full max-w-xs" 
                         {...register("email",{
                             required :{
                                 value: true,
@@ -78,7 +78,7 @@ const Login = () => {
                         </label> */}
                         <input type="password" 
                         placeholder="Password" 
-                        className="input input-bordered w-full max-w-xs" 
+                        className="input input-primary input-bordered w-full max-w-xs" 
                         {...register("password",{
                             required :{
                                 value: true,
@@ -96,7 +96,7 @@ const Login = () => {
                         </label>
                     </div>
                     {signInError}
-                        <input className="btn w-full max-w-xs" type="submit" value='Login' />
+                        <input className="btn w-full input-primary max-w-xs" type="submit" value='Login' />
             </form>
                     <p>
                     <small>New to Carpent Shop ? 
@@ -106,7 +106,7 @@ const Login = () => {
                     <div className="divider w-full max-w-xs">OR</div>
                     <button 
                    onClick={() => signInWithGoogle()}
-                    className="btn text-base-300 btn-outline uppercase w-full max-w-xs"
+                    className="btn  btn-outline uppercase w-full max-w-xs"
                     >Continue with Google</button>
                 </div>
         </div>
