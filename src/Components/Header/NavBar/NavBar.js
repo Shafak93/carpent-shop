@@ -9,6 +9,7 @@ const NavBar = () => {
         <li><Link to='/review'>Review</Link></li>
         <li><Link to='/contact'>Contact</Link></li>
         <li><Link to='/about'>About</Link></li>
+        <li><Link to='/login'>Login</Link></li>
         </>
     return (
         <div>
