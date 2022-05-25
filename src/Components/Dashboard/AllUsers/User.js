@@ -1,18 +1,31 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
-const User = ({user,index}) => {
-    const {email} = user
+const User = ({user,index, refetch}) => {
+    const {email, roll} = user
 
     const makeAdmin = () =>{
         fetch(`http://localhost:5000/user/admin/${email}`,{
             method : 'PUT',
-            headers :{
-                headers : 'application/json'
-            }
+            headers : {
+                // 'content-type' : 'application/json',
+                    authorization : `Bearer ${localStorage.getItem('accessToken')}`
+                   
+                }
+            
         })
-        .then(res => res.json())
+        .then(res => {
+            console.log(res);
+            if(res.status === 403){
+                toast.error('Sorry!! You have no authorize to make an admin')
+            }
+            return res.json()
+        })
         .then(data =>{
-            console.log(data);
+            if(data.modifiedCount > 0){
+                refetch();
+                toast.success('You have successfully made admin!!!')
+        }
         })
     }
     return (
@@ -20,7 +33,7 @@ const User = ({user,index}) => {
             <tr>
                 <th>{index+1}</th>
                 <td>{email}</td>
-                <td><button onClick={makeAdmin} class="btn btn-outline btn-primary">Make Admin</button></td>
+                <td>{roll !== 'admin' && <button onClick={makeAdmin} class="btn btn-outline btn-primary">Make Admin</button>}</td>
                 <td><button class="btn btn-outline btn-primary">Remove User</button></td>
             </tr>
         

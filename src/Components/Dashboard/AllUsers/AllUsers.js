@@ -3,7 +3,12 @@ import { useQuery } from 'react-query';
 import User from './User';
 
 const AllUsers = () => {
-    const {data : users, isLoading} = useQuery('users', ()=>fetch('http://localhost:5000/user').then(res => res.json()))
+    const {data : users, isLoading, refetch} = useQuery('users', ()=>fetch('http://localhost:5000/user',{
+        method : 'GET',
+        headers : {
+            authorization : `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()))
     if(isLoading){
         return <p>Loading...</p>
     }
@@ -22,9 +27,13 @@ const AllUsers = () => {
                     </tr>
                 </thead>
                     <tbody>
-                        
                    {
-                       users.map((user, index) =><User index={index} key={user._id} user={user}></User>)
+                       users.map((user, index) =><User 
+                       index={index} 
+                       key={user._id} 
+                       user={user}
+                       refetch={refetch}
+                       ></User>)
                    }
                     </tbody>
                 </table>

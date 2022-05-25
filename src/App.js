@@ -13,6 +13,8 @@ import MyProducts from './Components/Dashboard/MyProducts/MyProducts';
 import AddReview from './Components/Dashboard/AddReview/AddReview';
 import MyProfile from './Components/Dashboard/MyProfile/MyProfile';
 import AllUsers from './Components/Dashboard/AllUsers/AllUsers';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
