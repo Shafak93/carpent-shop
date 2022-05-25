@@ -3,6 +3,7 @@ import auth from '../../../firebase.init';
 import { useForm } from 'react-hook-form';
 import {useSignInWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase-hooks/auth'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -16,19 +17,19 @@ const Login = () => {
       const navigate = useNavigate();
       const location = useLocation();
       let from = location.state?.from?.pathname || "/";
-    //   const [token] = useToken(user || googleUser)
+      const [token] = useToken(user || googleUser)
       let signInError;
 
-      useEffect(()=>{
-        if(user || googleUser){
-            navigate(from, { replace: true });
-        }
-      },[user, googleUser, from , navigate])
     //   useEffect(()=>{
-    //     if(token){
+    //     if(user || googleUser){
     //         navigate(from, { replace: true });
     //     }
-    //   },[token, from , navigate])
+    //   },[user, googleUser, from , navigate])
+      useEffect(()=>{
+        if(token){
+            navigate(from, { replace: true });
+        }
+      },[token, from , navigate])
 
       if(loading || googleLoading){
         return <p>Loading...</p>
