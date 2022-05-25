@@ -10,6 +10,9 @@ import Signup from './Components/RequireAuth/Signup/Signup';
 import RequireAuth from './Components/RequireAuth/RequireAuth/RequireAuth';
 import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
 import MyProducts from './Components/Dashboard/MyProducts/MyProducts';
+import AddReview from './Components/Dashboard/AddReview/AddReview';
+import MyProfile from './Components/Dashboard/MyProfile/MyProfile';
+import AllUsers from './Components/Dashboard/AllUsers/AllUsers';
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
           </RequireAuth>
         }>
           <Route index element={<MyProducts></MyProducts>}></Route>
+          <Route path='addreview' element={<AddReview></AddReview>}></Route>
+          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='allusers' element={<AllUsers></AllUsers>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
