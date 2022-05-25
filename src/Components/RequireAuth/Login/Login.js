@@ -20,11 +20,6 @@ const Login = () => {
       const [token] = useToken(user || googleUser)
       let signInError;
 
-    //   useEffect(()=>{
-    //     if(user || googleUser){
-    //         navigate(from, { replace: true });
-    //     }
-    //   },[user, googleUser, from , navigate])
       useEffect(()=>{
         if(token){
             navigate(from, { replace: true });
