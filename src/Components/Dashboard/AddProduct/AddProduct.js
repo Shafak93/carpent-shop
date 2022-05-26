@@ -3,8 +3,45 @@ import { useForm } from 'react-hook-form';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const imgStorageKey = '7cb3b56e4877ff4722a871c2d10f529f';
+
     const onSubmit = async data => {
-        console.log('data',data)
+        console.log(data);
+        const image = data.img[0]
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imgStorageKey}`
+        fetch(url, {
+            method : 'POST',
+            body : formData
+        })
+        .then(res => res.json())
+        .then(result =>{
+            if(result.success){
+                const img = result.data.url;
+                const product ={
+                    name : data.name,
+                    price : data.price,
+                    description: data.description,
+                    minOrder : data.minOrder,
+                    availableProduct : data.availableProduct,
+                    img : img
+                }
+                //Sending product data to database
+                fetch(`http://localhost:5000/product`,{
+                    method : 'POST',
+                    headers :{
+                        'content-type' : 'application/json'
+                    },
+                    body : JSON.stringify(product)
+                })
+                .then(res => res.json())
+                .then(insertValue => {
+                    console.log('inserted product data',insertValue);
+                })
+            }
+            console.log('img Result', result);
+        })
         
     };
     return (
@@ -46,9 +83,8 @@ const AddProduct = () => {
                     </div>
                             {/* Product Description */}
                     <div className="form-control w-full max-w-xs">
-                    <textarea class="textarea h-24 textarea-primary"
+                    <textarea className="textarea h-24 textarea-primary input-bordered w-full max-w-xs"
                     placeholder="Product Description" 
-                    className="input input-primary input-bordered w-full max-w-xs" 
                     {...register("description",{
                         required :{
                             value: true,
@@ -104,18 +140,17 @@ const AddProduct = () => {
                     </div>
                             {/* Product Image*/}
                     <div className="form-control w-full max-w-xs">
-                        <input type="number" 
-                        placeholder="Available product quantity" 
+                        <input type="file" 
                         className="input input-primary input-bordered w-full max-w-xs" 
-                        {...register("availableProduct",{
+                        {...register("img",{
                             required :{
                                 value: true,
-                                message : 'Available product quantity is required.'
+                                message : 'Image is required.'
                             }
                           })}
                         />
                         <label className="label">
-                        {errors.availableProduct?.type === 'required' && <span className="label-text-alt text-red-500">{errors.availableProduct.message}</span>}
+                        {errors.img?.type === 'required' && <span className="label-text-alt text-red-500">{errors.img.message}</span>}
                         </label>
                     </div>
                    
