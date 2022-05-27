@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
+import ProfileInfo from './ProfileInfo';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth)
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const [profile, setProfile] = useState({})
-    console.log(profile);
+    const { register, formState: { errors }, handleSubmit,reset } = useForm();
+    
+    // console.log(profile);
     const email = user.email;
     const onSubmit = async data => {
        
@@ -26,13 +27,12 @@ const MyProfile = () => {
             
         })
         .then(res => res.json())
-        .then(data =>console.log(data))
+        .then(data =>{
+            console.log(data)
+            reset();
+        })
     };
-    useEffect(()=>{
-        fetch(`http://localhost:5000/profile/${email}`)
-        .then(res => res.json())
-        .then(data =>setProfile(data))
-    },[])
+   
     return (
         <div className='grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 py-12'>
             <div class="card w-96 bg-neutral text-neutral-content">
@@ -90,14 +90,7 @@ const MyProfile = () => {
             </div>
 
             <div class="card w-96 bg-neutral text-neutral-content">
-            <div class="card-body">
-                <h2 class="card-title">My Profile</h2>
-                <h2 className='text-xl'>Name : {user.displayName}</h2>
-                <p>Email : {user.email}</p>
-                <p>Phone: {profile.phone}</p>
-                <p>Address: {profile.address}</p>
-                <p>Education: {profile.education}</p>
-            </div>
+            <ProfileInfo></ProfileInfo>
             </div>
         </div>
     );
