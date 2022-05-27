@@ -28,8 +28,6 @@ const Signup = () => {
         navigate('/dashboard')
     }
     const onSubmit = async data => {
-        console.log(data)
-
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName : data.name })
         
@@ -41,10 +39,8 @@ const Signup = () => {
                     <h2 className="text-xl font bold text-center">Sign Up</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
+                        {/*============ Name ===================*/}
                     <div className="form-control w-full max-w-xs">
-                        {/* <label className="label">
-                            <span className="label-text">Your name</span>
-                        </label> */}
                         <input type="text" 
                         placeholder="Your Name" 
                         className="input input-primary input-bordered w-full max-w-xs" 
@@ -59,12 +55,8 @@ const Signup = () => {
                         {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                         </label>
                     </div>
-
-
+                    {/* =================Email================== */}
                     <div className="form-control w-full max-w-xs">
-                        {/* <label className="label">
-                            <span className="label-text">Email</span>
-                        </label> */}
                         <input type="email" 
                         placeholder="Your Email" 
                         className="input input-primary input-bordered w-full max-w-xs" 
@@ -74,9 +66,8 @@ const Signup = () => {
                                 message : 'Email is required.'
                             },
                             pattern: {
-                                //[A-Za-z]{3}
                               value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                              message: 'Enter a valid email.' // JS only: <p>error message</p> TS only support string
+                              message: 'Enter a valid email.'
                             }
                           })}
                         />
@@ -85,10 +76,8 @@ const Signup = () => {
                         {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                         </label>
                     </div>
+                          {/* =====================Password===================== */}
                     <div className="form-control w-full max-w-xs">
-                        {/* <label className="label">
-                            <span className="label-text">Password</span>
-                        </label> */}
                         <input type="password" 
                         placeholder="Password" 
                         className="input input-primary input-bordered w-full max-w-xs" 
@@ -99,7 +88,7 @@ const Signup = () => {
                             },
                             minLength: {
                               value: 6,
-                              message: 'Password should be minimum 6 character or greater.' // JS only: <p>error message</p> TS only support string
+                              message: 'Password should be minimum 6 character or greater.'
                             }
                           })}
                         />

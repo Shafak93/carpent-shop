@@ -1,12 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imgStorageKey = '7cb3b56e4877ff4722a871c2d10f529f';
 
     const onSubmit = async data => {
-        console.log(data);
         const image = data.img[0]
         const formData = new FormData();
         formData.append('image', image);
@@ -37,10 +37,9 @@ const AddProduct = () => {
                 })
                 .then(res => res.json())
                 .then(insertValue => {
-                    console.log('inserted product data',insertValue);
+                    toast.success('Product added succefully')
                 })
             }
-            console.log('img Result', result);
         })
         
     };

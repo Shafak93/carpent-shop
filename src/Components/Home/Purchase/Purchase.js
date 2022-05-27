@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 
 const Purchase = () => {
@@ -8,7 +9,8 @@ const Purchase = () => {
     const {productId} = useParams()
     const [product, setProduct] = useState({});
     const {_id, name, img, description,minOrder,availableProduct,price} = product;
-    
+    const availableProductParse = parseFloat(availableProduct)
+
 
     useEffect(()=>{
         const url = `http://localhost:5000/product/${productId}`
@@ -20,7 +22,7 @@ const Purchase = () => {
     const handlePurchase = (event) =>{
         event.preventDefault();
         const orderQuantity = event.target.order.value;
-        if(orderQuantity >10 && orderQuantity < availableProduct){
+        if(orderQuantity >10 && orderQuantity < availableProductParse){
             const purchasing ={
                 purchaseId : _id,
                 userName : user.displayName,
@@ -39,15 +41,13 @@ const Purchase = () => {
             })
             .then(res => res.json())
             .then(data =>{
-                console.log('success', data)
-                alert('Order succesfully placed')
+                toast.success('Order succesfully placed')
                 event.target.reset()
             })
-        }else if(orderQuantity> availableProduct){
-            alert(`You can't order more than availble product`)
-           
+        }else if(orderQuantity> availableProductParse){
+            toast.error(`You can't order more than availble product`)
         }else{
-            alert('You have to order minimum 10 products')
+            toast.error('You have to order minimum 10 products')
         }
         
 
