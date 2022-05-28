@@ -1,3 +1,12 @@
+# project name : carpent-shop
+## Live site link : https://carpent-shop.web.app/
+## My project info 
+* Firebase authentication 
+* This project has made for two different users .They are generel users and Admin users
+* Admin has some functionalities and access which is not accessible for general user
+* On the other hand, General users has some access and function that are not allowed for admin.
+* I use technology for this project that are react, react route , node js, express js, mongodb, firebase authentication.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -28,7 +28,7 @@ const AddProduct = () => {
                     img : img
                 }
                 //Sending product data to database
-                fetch(`http://localhost:5000/product`,{
+                fetch(`https://obscure-crag-61698.herokuapp.com/product`,{
                     method : 'POST',
                     headers :{
                         'content-type' : 'application/json'

@@ -13,7 +13,7 @@ const Purchase = () => {
 
 
     useEffect(()=>{
-        const url = `http://localhost:5000/product/${productId}`
+        const url = `https://obscure-crag-61698.herokuapp.com/product/${productId}`
         fetch(url)
         .then(res => res.json())
         .then(data => setProduct(data))
@@ -32,7 +32,7 @@ const Purchase = () => {
                 orderQuantity : event.target.order.value,
                 name
             }
-            fetch(`http://localhost:5000/purchasing`,{
+            fetch(`https://obscure-crag-61698.herokuapp.com/purchasing`,{
                 method: 'POST',
                 headers :{
                     'content-type' : 'application/json'
@@ -57,7 +57,7 @@ const Purchase = () => {
         // const updateProduct = {...product, availableProduct:newQuantity}
         // setProduct(updateProduct)
         // //Send data to the server
-        // const url = `http://localhost:5000/product/${productId}`
+        // const url = `https://obscure-crag-61698.herokuapp.com/product/${productId}`
         // fetch(url,{
         //     method: 'PUT',
         //     headers: {

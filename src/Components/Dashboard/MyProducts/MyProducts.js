@@ -10,7 +10,7 @@ const MyProducts = () => {
     const navigate = useNavigate();
     useEffect(()=>{
         if(user){
-            fetch(`http://localhost:5000/purchasing?userEmail=${user.email}`,{
+            fetch(`https://obscure-crag-61698.herokuapp.com/purchasing?userEmail=${user.email}`,{
                 method : 'GET',
                 headers : {
                     'authorization' : `Bearer ${localStorage.getItem('accessToken')}`

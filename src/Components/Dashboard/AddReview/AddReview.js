@@ -15,7 +15,7 @@ const AddReview = () => {
             rating : data.rating
         }
         console.log(reviewInfo);
-        fetch(`http://localhost:5000/review`,{
+        fetch(`https://obscure-crag-61698.herokuapp.com/review`,{
             method : 'POST',
             headers : {
                     'content-type' : 'application/json'

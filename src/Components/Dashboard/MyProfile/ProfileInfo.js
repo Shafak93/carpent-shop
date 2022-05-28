@@ -7,7 +7,7 @@ const ProfileInfo = () => {
     const [profile, setProfile] = useState({})
     const email = user.email
     useEffect(()=>{
-        fetch(`http://localhost:5000/profile/${email}`)
+        fetch(`https://obscure-crag-61698.herokuapp.com/profile/${email}`)
         .then(res => res.json())
         .then(data =>setProfile(data))
     },[profile])
