@@ -3,7 +3,9 @@ import contact from '../../../banner/contactus.jpg'
 
 const ContactUs = () => {
     return (
-        <div className='flex justify-around items-center py-12'>
+        <div>
+            <h1 className='text-5xl text-center font-bold pt-10'>CONTACT US</h1>
+            <div className='flex justify-around items-center py-12'>
             <div className='lg:w-96 md:w-40'>
                 <img className=' rounded' src={contact} alt="" />
             </div>
@@ -21,6 +23,7 @@ const ContactUs = () => {
                 <button class="btn btn-outline btn-primary">Contact Us</button>
                 </form>
             </div>
+        </div>
         </div>
     );
 };
