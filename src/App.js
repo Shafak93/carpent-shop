@@ -16,6 +16,8 @@ import AllUsers from './Components/Dashboard/AllUsers/AllUsers';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
+import Review from './Components/Home/Review/Review';
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/tools' element={<Tools></Tools>}></Route>
+        <Route path='/review' element={<Review></Review>}></Route>
         <Route path='/product/:productId' element={
           <RequireAuth>
             <Purchase></Purchase>
