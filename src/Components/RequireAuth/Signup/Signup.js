@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import useToken from '../../../hooks/useToken';
+import Loading from '../Loading/Loading';
 
 const Signup = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -19,7 +20,7 @@ const Signup = () => {
     const navigate = useNavigate()
     let signInError;
     if(loading || googleLoading || updating){
-        return <p>Loading..</p>
+        return <Loading></Loading>
     }
     if(error || signInError || updateError){
         signInError = <small><p className='text-red-500'>{error?.message || googleError?.message || updateError?.message}</p></small>

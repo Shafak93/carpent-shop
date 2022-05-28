@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../../RequireAuth/Loading/Loading';
 import User from './User';
 
 const AllUsers = () => {
@@ -10,7 +11,7 @@ const AllUsers = () => {
         }
     }).then(res => res.json()))
     if(isLoading){
-        return <p>Loading...</p>
+        return <Loading></Loading>
     }
    
     return (
