@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
 import Review from './Components/Home/Review/Review';
 import Portfolio from './Components/Header/Portfolio/Portfolio';
+import NotFound from './Components/RequireAuth/NotFound/NotFound';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>
