@@ -10,7 +10,7 @@ const Tool = ({tool}) => {
 
     return (
         <div>
-            <div className="card w-96 bg-base-300 shadow-2xl">
+            <div className="card gap-4 w-96 bg-base-300 shadow-2xl">
                 <figure><img src={img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="text-xl text-center">{name}</h2>

@@ -9,7 +9,9 @@ const Tools = () => {
         .then(data => setTools(data.reverse().slice(0,3)))
     },[])
     return (
-        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-12'>
+        <div className='grid 
+        sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+        gap-5 px-12'>
             {
                 tools.map(tool => <Tool key={tool._id} tool ={tool}></Tool>)
             }

@@ -17,7 +17,7 @@ const NavBar = () => {
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/portfolio'>My Portfolio</Link></li>
         <li>{ user ? <button className="btn btn-ghost" onClick={logout}>Log out</button> : <Link to='/login'>Login</Link>}</li>
-        <li>{user && user.displayName}</li>
+        <li><Link to='/dashboard/myprofile'>{user && user.displayName}</Link></li>
         </>
     return (
         <div>

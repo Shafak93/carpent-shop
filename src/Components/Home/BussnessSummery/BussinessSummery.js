@@ -1,31 +1,48 @@
 import React from 'react';
 import CountUp from 'react-countup';
+import { FcCustomerSupport } from "react-icons/fc";
+import {FcPlanner } from "react-icons/fc";
+import {AiFillCustomerService } from "react-icons/ai";
+import {BsTools } from "react-icons/bs";
+import './BussinessSummery.css'
 
 const BussinessSummery = () => {
     return (
         <div className='p-12'>
             <h1 className='text-center text-6xl font-bold '>We have</h1>
             <div class="divider"></div> 
-            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 '>
 
-                    <div>
-                    <CountUp className='text-6xl'start={400} end={500} /><span className='text-5xl'>+</span>
-                    <h1 className='text-5xl'>Customers</h1>
+                    <div className='summery-box flex flex-col justify-center items-center'>
+                        <FcCustomerSupport size={100}></FcCustomerSupport>
+                        <div>
+                        <CountUp className='text-6xl'start={400} end={500} /><span className='text-5xl'>+</span>
+                        </div>
+                        <h1 className='text-5xl'>Customers</h1>
                     </div>
                     
-                <div>
-                <CountUp className='text-6xl' end={120} /><span className='text-5xl'>M+</span>
-                <h1 className='text-5xl'>Annual Reveneu</h1>
+                <div className='summery-box flex flex-col  items-center'>
+                    <FcPlanner size={100}></FcPlanner>
+                    <div>
+                    <CountUp className='text-6xl' end={120} /><span className='text-5xl'>M+</span>
+                    </div>
+                    <h1 className='text-5xl ml-12'>Annual Reveneu</h1>
                 </div>
 
-                <div>
-                <CountUp className='text-6xl' end={33} /><span className='text-5xl'>K+</span>
+                <div className='summery-box flex flex-col  items-center'>
+                    <AiFillCustomerService size={100}></AiFillCustomerService>
+                    <div>
+                    <CountUp className='text-6xl' end={33} /><span className='text-5xl'>K+</span>
+                    </div>
                 <h1 className='text-5xl'>Reviews</h1>
                 </div>
                 
-                <div>
-                <CountUp className='text-6xl' end={50} /><span className='text-5xl'>+</span>
-                <h1 className='text-5xl'>Tools</h1>
+                <div className='summery-box flex flex-col  items-center'>
+                    <BsTools size={100}></BsTools>
+                    <div>
+                    <CountUp className='text-6xl' end={50} /><span className='text-5xl'>+</span>
+                    </div>
+                    <h1 className='text-5xl'>Tools</h1>
                 </div>
         </div>
         </div>
