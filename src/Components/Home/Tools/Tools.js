@@ -6,7 +6,7 @@ const Tools = () => {
     useEffect(()=>{
         fetch('https://obscure-crag-61698.herokuapp.com/product')
         .then(res => res.json())
-        .then(data => setTools(data.reverse().slice(0,3)))
+        .then(data => setTools(data.reverse().slice(0,6)))
     },[])
     return (
         <div className='grid 

@@ -1,13 +1,13 @@
-import React,{ Component }  from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import banner1 from '../../banner/banner-1.png'
-import banner2 from '../../banner/banner-2.png'
-import banner3 from '../../banner/banner-3.png'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import banner1 from '../../banner/banner-1.png';
+import banner2 from '../../banner/banner-2.png';
+import banner3 from '../../banner/banner-3.png';
 
 const Banner = () => {
     return (
-        <div>
+        <div className='mt-16'>
             
             {/* <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">

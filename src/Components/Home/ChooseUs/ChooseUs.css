@@ -1,0 +1,11 @@
+.choose-box{
+    padding: 10px;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 0px gray;
+    /* border-radius: 10px; */
+    /* transition: .2s; */
+}
+.choose-box:hover{
+    
+     box-shadow: 5px 5px 0px gray;;
+}
