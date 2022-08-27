@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './Components/Header/NavBar/NavBar';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Route, Routes } from 'react-router-dom';
-import Home from './Components/Home/Home';
-import Purchase from './Components/Home/Purchase/Purchase';
-import Tools from './Components/Home/Tools/Tools';
-import Login from './Components/RequireAuth/Login/Login';
-import Signup from './Components/RequireAuth/Signup/Signup';
-import RequireAuth from './Components/RequireAuth/RequireAuth/RequireAuth';
-import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
-import MyProducts from './Components/Dashboard/MyProducts/MyProducts';
-import AddReview from './Components/Dashboard/AddReview/AddReview';
-import MyProfile from './Components/Dashboard/MyProfile/MyProfile';
-import AllUsers from './Components/Dashboard/AllUsers/AllUsers';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
-import Review from './Components/Home/Review/Review';
+import AddReview from './Components/Dashboard/AddReview/AddReview';
+import AllUsers from './Components/Dashboard/AllUsers/AllUsers';
+import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
+import MyProducts from './Components/Dashboard/MyProducts/MyProducts';
+import MyProfile from './Components/Dashboard/MyProfile/MyProfile';
+import NavBar from './Components/Header/NavBar/NavBar';
 import Portfolio from './Components/Header/Portfolio/Portfolio';
+import Home from './Components/Home/Home';
+import Purchase from './Components/Home/Purchase/Purchase';
+import Review from './Components/Home/Review/Review';
+import Tools from './Components/Home/Tools/Tools';
+import Login from './Components/RequireAuth/Login/Login';
 import NotFound from './Components/RequireAuth/NotFound/NotFound';
+import RequireAuth from './Components/RequireAuth/RequireAuth/RequireAuth';
+import Signup from './Components/RequireAuth/Signup/Signup';
 
 
 function App() {

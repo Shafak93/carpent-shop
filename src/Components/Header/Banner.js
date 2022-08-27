@@ -1,53 +1,33 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import banner1 from '../../banner/banner-1.png';
-import banner2 from '../../banner/banner-2.png';
-import banner3 from '../../banner/banner-3.png';
+import slider4 from '../../banner/screw-slider.jpg';
+import slider1 from '../../banner/slider-1.webp';
+import slider2 from '../../banner/slider-2.webp';
+import slider3 from '../../banner/slider-3.webp';
+
 
 const Banner = () => {
+    
     return (
-        <div className='mt-16'>
-            
-            {/* <div className="carousel w-full">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src={banner1} className="w-full" /> / 
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide3" className="btn btn-circle">❮</a> 
-                    <a href="#slide2" className="btn btn-circle">❯</a>
-                    </div>
-                </div> 
-                <div id="slide2" className="carousel-item relative w-full">
-                    <img src={banner2} className="w-full" /> / 
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide1" className="btn btn-circle">❮</a> 
-                    <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div> 
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src={banner3} className="w-full" /> / 
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide2" className="btn btn-circle">❮</a> 
-                    <a href="#slide1" className="btn btn-circle">❯</a>
-                    </div>
-                </div> 
-                </div> */}
-
-                <Carousel animationHandler="fade" autoPlay={true}>
+        <div style={{ marginTop:65 }} >
+            <Carousel animationHandler="fade" showArrows={true} autoPlay={true} infiniteLoop={true} interval={3000} showThumbs={false} transitionTime={2000} verticalSwipe={'natural'} dynamicHeight={true}>
                 <div>
-                    <img src={banner1} />
+                    <img className='h-36 md:h-60 lg:h-96 ' src={slider1} />
+                </div>
+                <div>
+                    <img className='h-36 md:h-60 lg:h-96' src={slider2} />
                     
                 </div>
                 <div>
-                    <img src={banner2} />
+                    <img className='h-36 md:h-60 lg:h-96' src= {slider3} />
                     
                 </div>
                 <div>
-                    <img src={banner3} />
+                    <img className='h-36 md:h-60 lg:h-96' src={slider4} />
                     
                 </div>
             </Carousel>
-
         </div>
     );
 };
