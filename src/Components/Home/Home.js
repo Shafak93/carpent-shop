@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../Header/Banner';
+import AboutUs from './AboutUs/AboutUs';
 import BussinessSummery from './BussnessSummery/BussinessSummery';
 import ChooseUs from './ChooseUs/ChooseUs';
 import Client from './Client/Client';
@@ -10,13 +11,14 @@ import Tools from './Tools/Tools';
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <Banner></Banner>
             <Tools></Tools>
             <BussinessSummery></BussinessSummery>
             <ChooseUs></ChooseUs>
             <Client></Client>
             <Review></Review>
+            <AboutUs></AboutUs>
             <ContactUs></ContactUs>
             <Footer></Footer>
         </div>

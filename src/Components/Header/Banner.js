@@ -10,7 +10,7 @@ import slider3 from '../../banner/slider-3.webp';
 const Banner = () => {
     
     return (
-        <div style={{ marginTop: 65 }} >
+        <div>
             
             <Carousel animationHandler="fade" showArrows={true} autoPlay={true} infiniteLoop={true} interval={3000} showThumbs={false} transitionTime={2000} verticalSwipe={'natural'} dynamicHeight={true}>
                 <div>
