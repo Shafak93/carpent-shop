@@ -11,6 +11,7 @@ import MyProducts from './Components/Dashboard/MyProducts/MyProducts';
 import MyProfile from './Components/Dashboard/MyProfile/MyProfile';
 import NavBar from './Components/Header/NavBar/NavBar';
 import Portfolio from './Components/Header/Portfolio/Portfolio';
+import AboutUs from './Components/Home/AboutUs/AboutUs';
 import Home from './Components/Home/Home';
 import Purchase from './Components/Home/Purchase/Purchase';
 import Review from './Components/Home/Review/Review';
@@ -30,6 +31,7 @@ function App() {
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/tools' element={<Tools></Tools>}></Route>
           <Route path='/review' element={<Review></Review>}></Route>
+          <Route path='/aboutus' element={<AboutUs></AboutUs>}></Route>
           <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
           <Route path='/product/:productId' element={
             <RequireAuth>

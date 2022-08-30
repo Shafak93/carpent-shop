@@ -10,7 +10,8 @@ const Tool = ({tool}) => {
 
     return (
         <div>
-            <div>
+            <div data-aos="fade-up"
+                data-aos-duration="800">
                 <div class="bg-white shadow-xl shadow-gray-400 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700 ">
                     <figure className='overflow-hidden'>
                             <img class="hover:transform hover:scale-110 hover:transition hover:duration-500 duration-500 rounded mx-auto w-full max-h-64" src={img} alt="product image" />

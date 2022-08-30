@@ -5,7 +5,7 @@ const SingleReview = ({reviewInfo}) => {
      const {name,review, rating} = reviewInfo
     return (
       
-            <div >
+        <div data-aos="zoom-in" data-aos-duration="1000">
                 <div>
                 <div class="group w-64 h-64  dark:bg-gray-800  relative flex flex-col items-center hover:bg-accent cursor-pointer shadow-md md:p-12 p-6">
                         <div class=" dark:text-gray-200   group-hover:text-gray-800 flex flex-col items-center">

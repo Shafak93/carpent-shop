@@ -6,10 +6,12 @@ import auth from '../../../firebase.init';
 
 const MyProducts = () => {
     const [products, setProducts] = useState([])
+    
     const [user] = useAuthState(auth)
     const navigate = useNavigate();
     useEffect(()=>{
-        if(user){
+        if (user) {
+            
             fetch(`https://obscure-crag-61698.herokuapp.com/purchasing?userEmail=${user.email}`,{
                 method : 'GET',
                 headers : {
@@ -28,7 +30,8 @@ const MyProducts = () => {
             setProducts(data)
         })
         }
-    },[user])
+    }, [user])
+    
     return (
         <div>
             <h1>My products {products.length}</h1>

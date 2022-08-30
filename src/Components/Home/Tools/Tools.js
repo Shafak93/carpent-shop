@@ -3,11 +3,19 @@ import Tool from '../Tool/Tool';
 
 const Tools = () => {
     const [tools, setTools] = useState([])
-    useEffect(()=>{
+    const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        setLoading(true)
         fetch('https://obscure-crag-61698.herokuapp.com/product')
         .then(res => res.json())
-        .then(data => setTools(data.reverse().slice(0,6)))
-    },[])
+            .then(data => {
+                setTools(data.reverse().slice(0, 6))
+                setLoading(false)
+            })
+    }, [])
+    // if (loading === true) {
+    //     return <Loading></Loading>
+    // }
     return (
         <>
             <h1 className='text-5xl font-bold text-center my-5'>Featured Tools</h1>
